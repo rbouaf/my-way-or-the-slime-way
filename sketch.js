@@ -49,8 +49,8 @@ const randomDensity=0.2;
 
 // Arrays containing the particles, attracters, and emitters in the scene
 let particles = [];
-const attracters = [];
-const emitters = [];
+let attracters = [];
+let emitters = [];
 // Number of particles emitted per second by emitters in the scene
 let numParticlesEmitted = 5;
 
