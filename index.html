@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+
+    <h1>SLIME MOLD SPREAD SIMULATION</h1>
+    <div id="slimeContainer">
+    </div>      
+    <script src="sketch.js"></script>
+
+
+    <label>Decay</label>
+    <div class="slidecontainer">
+      <input type="number" id="decayInput" name="decayInput"
+      min="0" max="2" value="0.9" step="0.1">
+    </div>
+
+    <label>Sensor Angle</label>
+    <div class="slidecontainer2">
+      <input type="number" id="sensorAngle" name="sensorAngle"
+      min="0" max="6.28318531" value="0.785398163" step="0.392699082">
+    </div>
+
+    <label>Step Size</label>
+    <div class="slidecontainer3">
+      <input type="number" id="stepSize" name="stepSize"
+      min="0" max="10" value="1" step="1">
+    </div>
+
+    <label>Rotate Angle</label>
+    <div class="slidecontainer4">
+      <input type="number" id="rotateAngle" name="rotateAngle"
+      min="0" max="6.28318531" value="0.392699082 " step="0.392699082">
+    </div>
+
+    <button type="button">Run</button>
+
+    <div id='description' class='sized content'>
+      <p>
+        <span class='cool'></span> This is a simulation of the spread of Physarum polycephalum, a slime mold A.K.A. the blob. It's an organism that is not an animal, nor a plant, nor a fungus. 
+        Its known for its ability to create efficient and intelligent networks and solving "shortest path" problems. 
+
+      </p>
+  
+      <p> <span class='cool'>How to use the simulation</span>
+      <ul>
+        <li> Click anywhere on the black square to create a root blob.</li>
+        <li> Hold Shift and click anywhere to delete cells.</li>
+        <li> Hold Ctrl and click anywhere to create a permanent root blob</li>
+      </ul>
+      </p>
+  
+      <p> <span class='cool'>Math & Physics at work:</span><br>
+
+        This simulation is based on the cellular automata model.
+        THe plane is composed of two layers: the food trail layer and the position layer.
+        <div class="row">
+          <div class="column">
+            <img src="diagram_670.png" alt="Snow" style="width:100%">
+          </div>
+        </div>
+
+        Every slime node has three sensors. A sensor detects the amount of food in its sensor's area. The slime moves forward according to its sensors' values. These are detailed in the figures below.
+
+        A slime node starts by "sensing" (evaluating the values of its sensors)
+        
+        If the middle sensor detects the most food out of the 3 sensors, it doesn't change direction.
+        If both side sensors detect more food than the middle sensor, it turns randomly.
+        If the right sensor detects more food than the middle sensor, it turns right.
+        If the left sensor detects more food than the middle sensor, it turns left.
+
+        Then it moves forward according to that direction.
+
+        Then it deposits food on the food trail layer.
+
+
+
+
+
+
+
+        </p>
+
+        
+
+
+
+  </body>
+</html>
