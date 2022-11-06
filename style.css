@@ -135,7 +135,7 @@ canvas {
 
 #footer {
     text-align: center;
-    margin-top: 4em;
+    margin-top: 5em;
     margin-bottom: 5em;
     font-size: small;
     color: rgb(160, 160, 160);
@@ -162,7 +162,7 @@ canvas {
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
     float: left;
-    width: 50%;
+    width: 75%;
     padding: 2px;
   }
   
@@ -171,4 +171,75 @@ canvas {
     content: "";
     clear: both;
     display: table;
+  }
+
+
+
+.sizedcontent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
+}
+
+.sliders{
+    display: flex;
+    column-gap: 3px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.sliderLabels{
+  display: flex;
+  column-gap: 23px;
+  margin-bottom: 2px;
+  margin-top: 5px;
+
+  justify-content: space-between;
+}
+
+.clearNrand{
+    display: flex;
+  column-gap: 5px;
+  margin-bottom: 15px;
+
+  justify-content: space-between
+}
+
+
+.button button {
+    margin: 0;
+    background-color: #651312;
+    border: none;
+    border-radius: 0.5rem;
+
+    color: white;
+    padding: 6px 10px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 300ms;
+  }
+  
+  button:hover {
+    background: #e20000;
+  }
+
+.submitBTN button {
+    margin: 0;
+    background-color: #ffec72;
+    border: none;
+    border-radius: 0.5rem;
+
+    color: rgb(20, 19, 19);
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 300ms;
+  }
+  button:hover {
+    background: #ff7d69;
+    color: rgb(255, 255, 255);
+
+
   }
