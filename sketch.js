@@ -12,7 +12,7 @@ const imageWidth = 200;
 const imageHeight = 200;
 
 // Mouse click radius
-let clickRadius = 40;
+let clickRadius = 15;
 let radiusPrompt;
 // The number of particles spawned per click
 const particlesPerClick = 1000;
@@ -43,6 +43,9 @@ let SS = 1;
 let SSprompt;
 // Attract factor
 const depT = 5;
+
+//random densit
+const randomDensity=0.2;
 
 // Arrays containing the particles, attracters, and emitters in the scene
 let particles = [];
@@ -75,13 +78,13 @@ function setup() {
   RAprompt.size(40);
   SSprompt.size(40);
 
-  updateButton = createButton("RUN");
+  updateButton = createButton("UPDATE");
   updateButton.mousePressed(updateValues);
 
-  updateButton.parent("buttonSubmit")
+  updateButton.parent("clearNrand")
 
-  decayPrompt.parent("sliders");
   radiusPrompt.parent("sliders");
+  decayPrompt.parent("sliders");
   SAprompt.parent("sliders");
   RAprompt.parent("sliders");
   SSprompt.parent("sliders");
@@ -97,9 +100,11 @@ function setup() {
   let randomButton = createButton("RANDOM");
   randomButton.mousePressed(randomSpread);
   randomButton.parent("clearNrand");
+  updateButton.parent("clearNrand")
+
 
   canvas = createCanvas(imageWidth, imageHeight);
-
+  canvas.mouseClicked(canvasClick);
   canvas.parent("slimeContainer")
   
 
@@ -142,6 +147,7 @@ function draw() {
 
 function clearGrid(){
   particles =[];
+  emitters = [];
 }
 function randomSpread(){
   clearGrid();
@@ -242,7 +248,7 @@ function decay() {
   at.updatePixels();
 }
 
-function mouseClicked() {
+function canvasClick() {
   if (keyIsDown(SHIFT)) {
     const notRemoved = [];
     for (let xs of particles) {

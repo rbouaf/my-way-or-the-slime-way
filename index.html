@@ -13,11 +13,11 @@
     <h1>SLIME MOLD SPREAD SIMULATION</h1>
     <div id="slimeContainer"></div>      
     <script src="sketch.js"></script>
+    
     <div class= "sliderLabels" id="sliderLabels"></div>
     <div class="sliders" id="sliders"></div>
 
     <div class= "clearNrand button" id="clearNrand"></div>
-    <div class="button submitBTN" id="buttonSubmit"></div>
 
     
 
@@ -33,13 +33,18 @@
         <li> Click anywhere on the black square to create a root blob.</li>
         <li> Hold Shift and click anywhere to delete cells.</li>
         <li> Hold Alt and click anywhere to create a permanent emitter root blob</li>
+        <li> Click on the CLEAR button to clear the screen.</li>
+        <li> Click on the RANDOM button to randomize the clusters.</li>
+        <li> You can edit r, decayT, SA, RA, and SS to change the slime mold's behavior.</li>
+        
+
       </ul>
       </p>
   
       <p> <span class='cool'>Math & Physics at work:</span><br>
 
         This simulation is based on the cellular automata model.
-        THe plane is composed of two layers: the chemoattractant trail layer and the position layer.
+        The plane is composed of two layers: the chemoattractant trail layer and the position layer.
         <div class="row">
           <div class="column">
             <img src="diagram_670.png" alt="Snow" style="width:100%">
@@ -62,21 +67,49 @@
         Then it deposits chemoattractants on the chemoattractant trail layer. 
 
         Then the chemoattractant diffuses (spreads out to its surroundings) and slowly decays. 
-        
-        
-        <h3>Variables</h3>
-        <br>
-        Spawn Radius
-        Spawn Particles
+        <br><br>
 
-        <b>Diffusion Size diffK</b>
-        Decay Factor decayT: The rate at which chemoattractants decay.
-        Sensor Angle SA: Check figure. 
-        Sensor Offset Distance SO 
-        Sensor width
-        Rotate Angle RA
-        Step Size SS
-        Attract Factor depT
+        <video class="videoDemo" width="600" height="600" controls>
+          <source src="video.webm" type="video/webm"/>
+
+        </video>
+        
+        <h3>Important Variables</h3>
+        <b>Spawn Radius r </b>       <br>
+        Radius that particles can spawn in at once. (How large the root cluster's area is.)<br><br>
+        
+
+        <b>Diffusion Size diffK:</b> <br>
+        How much the chemoattractant spreads. 
+        <br><br>
+        <b> Decay Factor decayT:</b><br>
+        The rate at which chemoattractants decay.        <br> <br>
+        <b>Sensor Angle SA:</b><br> 
+        Angle at which the side sensors deviate from the middle sensor. Check figure above.        <br> <br>
+     
+        <b>Rotation Angle RA  </b>       <br>
+        Angle that determines the slime node's next movement direction. 
+        <br><br>
+        <b>Step Size SS    </b>    <br>
+        Magnitude of the slime node's movement.
+        <br><br>
+
+
+
+        <!-- <b>Attract Factor depT</b>        <br>
+        Intensity of the chemoattractants.
+
+        <br><br>
+<b>Spawn Particles </b> <br>
+        Number of particles that are spawned at once. (How dense the root cluster is.)
+        <br><br>
+  <b> Sensor Offset Distance SO </b>         <br>
+
+          How far the sensor is from the slime node. Check figure above.
+          <br>  <br>
+   <b>Sensor Width SW    </b>   <br>
+        How big the sensors are. Check figure above.
+        <br><br> -->
 
 
 
