@@ -1,6 +1,5 @@
 /*
 Author(s): Team Uhhhhhh
-Mohamed Ben Mekki, Leif Martens-Wallace, Rayane Bouafia
 Date: 06/11/2022
 Description: This script uses p5.js to simulate the behavior of slime molds in the genus Physarum.  
 */
@@ -9,8 +8,8 @@ Description: This script uses p5.js to simulate the behavior of slime molds in t
 const INIT_PI = 3.14159265358979323846;
 
 // Dimensions of the image to be rendered
-const imageWidth = 250;
-const imageHeight = 250;
+const imageWidth = 220;
+const imageHeight = 220;
 
 // Mouse click radius
 let clickRadius = 15;
