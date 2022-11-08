@@ -1,135 +1,141 @@
 html,
 body {
-    height: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
 
 @import url(//db.onlinewebfonts.com/c/4b57277e89dfdd30c9a6b69acaf78d3a?family=SF+Pro);
 @import url(//db.onlinewebfonts.com/c/2fed949d780f40eb2e2f4374e4de8df5?family=SF+Pro+Display);
-@font-face {font-family: "SF Pro Display"; src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot"); src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff") format("woff"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.svg#SF Pro") format("svg"); }
-@font-face {font-family: "SF Pro Display Thin"; src: url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.eot"); src: url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.woff") format("woff"), url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.svg#SF Pro Display") format("svg"); }
-
-
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'SF Pro Display', serif;
-    font-feature-settings: "onum" 1;
-
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot");
+  src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.svg#SF Pro")
+      format("svg");
+}
+@font-face {
+  font-family: "SF Pro Display Thin";
+  src: url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.eot");
+  src: url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.svg#SF Pro Display")
+      format("svg");
 }
 
-
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "SF Pro Display", serif;
+  font-feature-settings: "onum" 1;
+}
 
 h1 {
-    font-family: 'SF Pro Display';
-    font-weight: thin;
-    padding-left: .3em;
-    padding-right: .3em;
-    color: #302f64;
-
-
+  font-family: "SF Pro Display";
+  font-weight: thin;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  color: #302f64;
 }
 
 h3 {
-    font-family: 'SF Pro Display Thin';
-    padding-left: .3em;
-    padding-right: .3em;
-    letter-spacing: 1px;
+  font-family: "SF Pro Display Thin";
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  letter-spacing: 1px;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 u {
-    font-family: 'SF Pro Display';
-    font-variant: small-caps;
-    font-weight: 100;
-    text-decoration: none;
-    letter-spacing: .04em;
+  font-family: "SF Pro Display";
+  font-variant: small-caps;
+  font-weight: 100;
+  text-decoration: none;
+  letter-spacing: 0.04em;
 }
 
 ul {
-    padding-inline-start: 25px;
-    padding-inline-end: 5px;
-    margin-block-start: .75em;
-    margin-block-end: .75em;
+  padding-inline-start: 25px;
+  padding-inline-end: 5px;
+  margin-block-start: 0.75em;
+  margin-block-end: 0.75em;
 }
 
-
 .emphasis {
-    box-shadow: inset .4em 0px 0 white, inset 0 -.7em 0 var(--midcolor);
-    font-weight: bold;
+  box-shadow: inset 0.4em 0px 0 white, inset 0 -0.7em 0 var(--midcolor);
+  font-weight: bold;
 }
 
 input {
-    text-align: center;
-    font-family: 'SF Pro Display';
-    border-width: 1px;
-    border-radius: 0.3rem;
-
-    }
-
+  text-align: center;
+  font-family: "SF Pro Display";
+  border-width: 1px;
+  border-radius: 0.3rem;
+}
 
 blockquote p {
-    margin-block-start: .25em;
-    margin-block-end: .25em;
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
 }
 
 code {
-    background-color: #dfdfdf;
-    border-radius: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
+  background-color: #dfdfdf;
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-
-
 .sized {
-    width: 800px;
-    max-width: 75vw;
+  width: 800px;
+  max-width: 75vw;
 }
 
 #description {
-    padding-top: .5em;
-    text-align: justify;
+  padding-top: 0.5em;
+  text-align: justify;
 }
-
-
 
 #footer {
-    font-family: 'SF Pro Display';
-    text-align: center;
-    margin-top: 5em;
-    margin-bottom: 5em;
-    font-size: small;
-    color: rgb(151, 146, 156);
-    width: 450px;
+  font-family: "SF Pro Display";
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  font-size: small;
+  color: rgb(151, 146, 156);
+  width: 450px;
 }
-
-
-
 
 .sizedcontent {
-    margin-left: auto;
-    margin-right: auto;
-    width: 8em
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
 }
 
-.sliders{
-    display: flex;
-    width: 13%;
-    float: center;
-    margin-bottom: 5px;
-    justify-content: space-between;
-    
+.sliders {
+  display: flex;
+  width: 13%;
+  float: center;
+  justify-content: space-between;
 }
 
-.sliderLabels{
+.sliderLabels {
   display: flex;
   column-gap: 22px;
   float: center;
@@ -145,29 +151,28 @@ code {
 }
 
 td {
-    text-align: center;
-    vertical-align: middle;
+  text-align: center;
+  vertical-align: middle;
 }
-#cssTable td 
-{
-    text-align: center; 
-    vertical-align: middle;
+#cssTable td {
+  text-align: center;
+  vertical-align: middle;
 }
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
-.clearNrand{
-    display: flex;
+.clearNrand {
+  display: flex;
   column-gap: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 
-  justify-content: space-between
+  justify-content: space-between;
 }
 table {
   width: 100%;
@@ -177,30 +182,37 @@ td {
 }
 
 .button button {
-    font-family: 'SF Pro Display',serif;
-    margin: 0;
-    background-color: #906ce4;
-    border: none;
-    border-radius: 0.3rem;
+  font-family: "SF Pro Display", serif;
+  margin: 0;
+  background-color: #906ce4;
+  border: none;
+  border-radius: 0.3rem;
 
-    color: white;
-    padding: 6px 10px;
-    text-align: center;
-    font-size: 12px;
-    cursor: pointer;
-    transition: 300ms;
-  }
-  
-  button:hover {
-    background: #fffd7d;
-    color: #432f64;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 300ms;
+}
 
-  }
+button:hover {
+  background: #fffd7d;
+  color: #432f64;
+}
 
+.videoDemo {
+  filter: brightness(400%);
+}
 
+.clearText {
+  font-family: "SF Pro Display";
+  font-size: smaller;
+  background-color: #a78fe4;
+  color: white;
+}
 
-  .videoDemo{
-    filter:brightness(400%);
-  }
+.keys {
+  border: 1px solid black;
 
-  
+}

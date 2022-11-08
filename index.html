@@ -3,25 +3,21 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
 
     <link href="//db.onlinewebfonts.com/c/4b57277e89dfdd30c9a6b69acaf78d3a?family=SF+Pro" rel="stylesheet" type="text/css"/>
     <link href="//db.onlinewebfonts.com/c/2fed949d780f40eb2e2f4374e4de8df5?family=SF+Pro+Display" rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    
-
-
     <meta charset="utf-8" />
-
+    <title>My Way or the Slime Way</title>
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2014/04/02/14/03/neuron-306034__340.png">
 
 </head>
 <body>
 
   <h1>My Way or the Slime Way</h1>
 
-  <div id="slimeContainer"></div>   
+  <div alt="Loading..." id="slimeContainer"></div>   
      
   <script src="sketch.js"></script>
   
@@ -32,15 +28,14 @@
       <td>SA<br/><div class="sliders" id="sliders3"></div></td>
       <td>RA<br/><div class="sliders" id="sliders4"></div></td>
       <td>SS<br/><div class="sliders" id="sliders5"></div></td>
-
     </tr>
-    </table>
+  </table>
   <div class= "sliderLabels" id="sliderLabels"></div>
   <div class="sliders" id="sliders"></div>
-
+  
   <div class= "clearNrand button" id="clearNrand"></div>
 
-  
+
   <h3>Simulating the spread of the Physarum polycephalum slime mold using cellular automata.  </h3>
 
   <div id="description" class="sized content">
@@ -50,10 +45,10 @@
     <p> <span class="emphasis">Instructions</span>
     <ul>
       <li> Click anywhere on the canvas to grow a slime root cluster from that point.</li>
-      <li> Hold <code>shift</code> and click anywhere on the canvas to kill off the slime mold in that particular area.</li>
-      <li> Hold <code>alt</code> and click anywhere on the canvas to create an emitter that continuously releases slime mold particles.</li>
-      <li> Use the provided buttons to <b><code>CLEAR</code></b> (remove all slime from the scene) and <b><code>RANDOM</code></b>ize (generate a new scene with random slime mold positioning) the scene.</li>
-      <li> Tinker around with the model's parameters by entering new values for: <code>r</code> (the radius of the slime mold cluster created by clicking), <code>decayT</code> (the rate at which the attracters that direct the slime mold's growth decay), <code>SA</code> (the sensor angle in radians), <code>RA</code> (the rotation angle in radians), and <code>SS</code> (the 'step size' of the slime mold). Then to update the scene and reflect changes made to these variables, press the update button. Watch as the system exhibits new and complex emergent properties!</li><br>
+      <li> Hold <code class="keys">shift</code> and click anywhere on the canvas to kill off the slime mold in that particular area.</li>
+      <li> Hold <code class="keys">alt</code> and click anywhere on the canvas to create an emitter that continuously releases slime mold particles.</li>
+      <li> Use the provided buttons to <code class="clearText">CLEAR</code> (remove all slime from the scene) and <code class="clearText">RANDOM</code>ize (generate a new scene with random slime mold positioning) the scene.</li>
+      <li> Tinker around with the model's parameters by entering new values for: <code>r</code> (the radius of the slime mold cluster created by clicking), <code>decayT</code> (the rate at which the attracters that direct the slime mold's growth decay), <code>SA</code> (the sensor angle in radians), <code>RA</code> (the rotation angle in radians), and <code>SS</code> (the 'step size' of the slime mold). Then to update the scene and reflect changes made to these variables, press the <code class="clearText">UPDATE</code> button. Watch as the system exhibits new and complex emergent properties!</li><br>
     </ul>
     </p>
 
@@ -61,7 +56,7 @@
 
       <br>&nbsp;&nbsp;&nbsp;&nbsp;Despite demonstrating a high capacity for cellular intelligence, the rules driving the slime mold (and their representations in our model) are actually quite simple! Following Jones' research, we modelled the behavior of <i>Physarum polycephalum</i> as follows:
         <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Every slime mold particle has three sensors, pointing straight ahead, skewed to the left, and skewed to the right. A sensor detects the amount of chemoattractant in its target area.
-      <div class="row">
+      <div>
       <center>
           <img src="diagram_670.png" style="width:80%">
         </center>
