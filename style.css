@@ -5,11 +5,7 @@ body {
     padding: 0 !important;
 }
 
-:root {
-    --backgcolor: rgb(230, 242, 250);
-    --maxHelpHeight: 50px;
 
-}
 @import url(//db.onlinewebfonts.com/c/4b57277e89dfdd30c9a6b69acaf78d3a?family=SF+Pro);
 @font-face {font-family: "SF Pro"; src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot"); src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff") format("woff"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.svg#SF Pro") format("svg"); }
 body {
@@ -20,12 +16,7 @@ body {
     font-feature-settings: "onum" 1;
 }
 
-@supports (font-variant-numeric: oldstyle-nums) {
-    body {
-        font-feature-settings: normal;
-        font-variant-numeric: oldstyle-nums;
-    }
-}
+
 
 h1 {
     font-family: 'SF Pro Display',serif;
@@ -34,11 +25,6 @@ h1 {
     padding-right: .3em;
     margin-bottom: .5em;
 }
-
-.katex {
-    font-size: 1em !important;
-}
-
 
 
 a:hover {
@@ -61,22 +47,13 @@ ul {
     margin-block-end: .75em;
 }
 
-ol {
-    list-style: lower-roman;
-}
 
 .emphasis {
     box-shadow: inset .4em 0px 0 white, inset 0 -.7em 0 var(--midcolor);
     font-weight: bold;
 }
 
-blockquote {
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    background-color: var(--backgcolor);
-}
+
 
 blockquote p {
     margin-block-start: .25em;
@@ -90,33 +67,7 @@ code {
     padding-right: 4px;
 }
 
-canvas {
-    margin: 0;
-    padding: 0;
-    vertical-align: bottom;
-}
 
-.fullscreen {
-    overflow: hidden;
-}
-
-.fullscreen .content {
-    display: none !important;
-}
-
-#wrapper {
-    display: grid;
-    grid-template: "h" 1fr / 1fr;
-    justify-content: center;
-    align-content: center;
-}
-
-#canvas {
-    position: relative;
-    grid-area: h;
-    padding: 0;
-    margin: 0;
-}
 
 .sized {
     width: 800px;
@@ -139,33 +90,6 @@ canvas {
     width: 450px;
 }
 
-
-.slidecontainer {
-    width: CENTER;
-}
-
-.slidecontainer2 {
-    width: CENTER;
-}
-
-.slidecontainer3 {
-    width: CENTER;
-}
-
-.slidecontainer4 {
-    width: CENTER; 
-}
-
-.column {
-    float: left;
-    width: 75%;
-    padding: 2px;
-  }
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 
 
 
@@ -219,26 +143,7 @@ canvas {
     background: #e20000;
   }
 
-.submitBTN button {
-    font-family: 'SF Pro Display',serif;
-    margin: 0;
-    background-color: #ffec72;
-    border: none;
-    border-radius: 0.5rem;
 
-    color: rgb(20, 19, 19);
-    padding: 8px 20px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 300ms;
-  }
-  button:hover {
-    background: #ff7d69;
-    color: rgb(255, 255, 255);
-
-
-  }
 
   .videoDemo{
     filter:brightness(400%);
