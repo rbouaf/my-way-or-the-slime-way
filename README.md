@@ -6,3 +6,5 @@ Based on the [Jones 2010](https://uwe-repository.worktribe.com/output/980579) pa
 ***Entry for the McGill Physics Hackathon 2022.***<br/>
 >**🥈2nd place Overall Winner**<br/>
 >**🥇1st place Biophysics Winner**<br/>
+# Try it for yourself
+> https://rayane-b.github.io/my-way-or-the-slime-way/
