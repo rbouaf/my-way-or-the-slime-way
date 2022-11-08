@@ -1,5 +1,6 @@
 /*
 Author(s): Team Uhhhhhh
+Mohamed Ben Mekki, Leif Martens-Wallace, Rayane Bouafia
 Date: 06/11/2022
 Description: This script uses p5.js to simulate the behavior of slime molds in the genus Physarum.  
 */
@@ -8,8 +9,8 @@ Description: This script uses p5.js to simulate the behavior of slime molds in t
 const INIT_PI = 3.14159265358979323846;
 
 // Dimensions of the image to be rendered
-const imageWidth = 200;
-const imageHeight = 200;
+const imageWidth = 250;
+const imageHeight = 250;
 
 // Mouse click radius
 let clickRadius = 15;
@@ -61,15 +62,10 @@ function setup() {
   at = createImage(imageWidth, imageHeight);
 
   at.loadPixels();
-  let radiusText = createElement('rad','r ');
   radiusPrompt = createInput(str(clickRadius));
-  let decayText = createElement('dec','  decayT ');
   decayPrompt = createInput(str(decayT));
-  let SAText = createElement('sa','  SA ');
   SAprompt = createInput(str(SA/PI*180));
-  let RAText = createElement('ra','  RA ');
   RAprompt = createInput(str(str(RA/PI*180)));
-  let SSText = createElement('ss','  SS ');
   SSprompt = createInput(str(SS));
 
   decayPrompt.size(40);
@@ -83,24 +79,20 @@ function setup() {
 
   updateButton.parent("clearNrand")
 
-  radiusPrompt.parent("sliders");
-  decayPrompt.parent("sliders");
-  SAprompt.parent("sliders");
-  RAprompt.parent("sliders");
-  SSprompt.parent("sliders");
+  radiusPrompt.parent("sliders1");
+  decayPrompt.parent("sliders2");
+  SAprompt.parent("sliders3");
+  RAprompt.parent("sliders4");
+  SSprompt.parent("sliders5");
 
-  radiusText.parent("sliderLabels")
-  decayText.parent("sliderLabels")
-  SAText.parent("sliderLabels")
-  RAText.parent("sliderLabels")
-  SSText.parent("sliderLabels")
+
   let clearButton = createButton("CLEAR");
   clearButton.mousePressed(clearGrid);
   clearButton.parent("clearNrand");
   let randomButton = createButton("RANDOM");
   randomButton.mousePressed(randomSpread);
   randomButton.parent("clearNrand");
-  updateButton.parent("clearNrand")
+  updateButton.parent("clearNrand");
 
 
   canvas = createCanvas(imageWidth, imageHeight);
