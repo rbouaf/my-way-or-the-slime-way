@@ -46,17 +46,22 @@ body {
 
 h1 {
   font-family: "SF Pro Display";
-  font-weight: thin;
   padding-left: 0.3em;
   padding-right: 0.3em;
-  color: #302f64;
+  color: #000000;
 }
 
-h3 {
+h2 {
   font-family: "SF Pro Display Thin";
   padding-left: 0.3em;
   padding-right: 0.3em;
   letter-spacing: 1px;
+  font-size: medium;
+}
+
+emphasis {
+  font-family: "SF Pro Display Bold";
+  color: #906ce4;
 }
 
 a:hover {
@@ -78,10 +83,6 @@ ul {
   margin-block-end: 0.75em;
 }
 
-.emphasis {
-  box-shadow: inset 0.4em 0px 0 white, inset 0 -0.7em 0 var(--midcolor);
-  font-weight: bold;
-}
 
 input {
   text-align: center;
@@ -131,14 +132,12 @@ code {
 .sliders {
   display: flex;
   width: 13%;
-  float: center;
   justify-content: space-between;
 }
 
 .sliderLabels {
   display: flex;
   column-gap: 22px;
-  float: center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2px;

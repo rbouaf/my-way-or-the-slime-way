@@ -1,82 +1,80 @@
 /*
 Author(s): Team Uhhhhhh
-Leif 
+Leif, Muhammad, Rayane
 Date: 06/11/2022
 Description: This script uses p5.js to simulate the behavior of slime molds in the genus Physarum.  
 */
+
+////////////////////////////////  SETTING CONSTANTS /////////////////////////////////////
 
 // Pre-setup pi
 const INIT_PI = 3.14159265358979323846;
 
 // Dimensions of the image to be rendered
-const imageWidth = 200;
-const imageHeight = 200;
+const imageWidth = 200;     const imageHeight = 200;
 
-// Mouse click radius
-let clickRadius = 15;
-let radiusPrompt;
+// Mouse Click Radius
+let clickRadius = 15;            let radiusPrompt;
 
 // The number of particles spawned per click
 const particlesPerClick = 1000;
-
 // The maximum number of particles that can be spawned
 const maxParticles = 100000;
 
 // Diffusion size
-const diffK = 2;
-
-// Decay factor
-let decayT = 0.9;
-let decayPrompt;
-
-// Sensor angle (radians)
-let SA = INIT_PI / 8;
-let SAprompt;
-
-// Rotate angle (radians)
-let RA = INIT_PI / 4;
-let RAprompt;
-
-// Sensor offset distance
-const SO = 9;
-
-// Sensor width
-const SW = 1;
-
+const diffusionSize = 2;
+// Decay factor (the rate at which the attracters that direct the slime mold's growth decay)
+let decayFactor = 0.9;           let decayPrompt;
+// Sensor angle (in radians)
+let sensorAngle = INIT_PI / 8;   let SAprompt;
+// Rotate angle (in radians)
+let rotateAngle = INIT_PI / 4;   let RAprompt;
 // Step size
-let SS = 1;
-let SSprompt;
-
+let stepSize = 1;                let SSprompt;
+// Sensor Offset Distance
+const sensorOffsetDistance = 9;
 // Attract factor
-const depT = 5;
-
-//random densit
+const attractionFactor = 5;
+// Random Density
 const randomDensity = 0.2;
+// Sensor Width
+// const sensorWidth = 1;
+
 
 // Arrays containing the particles, attracters, and emitters in the scene
 let particles = [];
 let attracters = [];
+
 let emitters = [];
 
 // Number of particles emitted per second by emitters in the scene
 let numParticlesEmitted = 5;
 
 // Image of attractors (the visual output by p5)
-let at;
+let imageVisualOutput;
 
+// buttons
 let updateButton;
+// let clearButton = createButton("CLEAR");
+// let randomButton = createButton("RANDOM");
+// The other 2 buttons are in setup()
+
+////////////////////////////////                /////////////////////////////////////
+
+
 
 function setup() {
-  at = createImage(imageWidth, imageHeight);
+  imageVisualOutput = createImage(imageWidth, imageHeight);
 
-  at.loadPixels();
+  imageVisualOutput.loadPixels();
 
+  //// InputSliders
   //create the settings input boxes
   radiusPrompt = createInput(str(clickRadius));
-  decayPrompt = createInput(str(decayT));
-  SAprompt = createInput(str((SA / PI) * 180));
-  RAprompt = createInput(str(str((RA / PI) * 180)));
-  SSprompt = createInput(str(SS));
+  decayPrompt = createInput(str(decayFactor));
+  SAprompt = createInput(str((sensorAngle / PI) * 180));
+  RAprompt = createInput(str(str((rotateAngle / PI) * 180)));
+  SSprompt = createInput(str(stepSize));
   //size of input boxes
   decayPrompt.size(40);
   radiusPrompt.size(40);
@@ -84,27 +82,29 @@ function setup() {
   RAprompt.size(40);
   SSprompt.size(40);
   //putting them inside the html
-  radiusPrompt.parent("sliders1");
-  decayPrompt.parent("sliders2");
-  SAprompt.parent("sliders3");
-  RAprompt.parent("sliders4");
-  SSprompt.parent("sliders5");
+  radiusPrompt.parent("radiusSlider");
+  decayPrompt.parent("decaySlider");
+  SAprompt.parent("sensorAngleSlider");
+  RAprompt.parent("rotateAngleSlider");
+  SSprompt.parent("stepSizeSlider");
 
   /// Buttons
-  //update
-  updateButton = createButton("UPDATE");
-  updateButton.mousePressed(updateValues);
-  updateButton.parent("clearNrand");
+
   //clear
   let clearButton = createButton("CLEAR");
   clearButton.mousePressed(clearGrid);
-  clearButton.parent("clearNrand");
+  clearButton.parent("clear&random&updateButtons");
   //random
   let randomButton = createButton("RANDOM");
   randomButton.mousePressed(randomSpread);
-  randomButton.parent("clearNrand");
+  randomButton.parent("clear&random&updateButtons");
   //add update button
-  updateButton.parent("clearNrand");
+  //update
+  updateButton = createButton("UPDATE");
+  updateButton.mousePressed(updateValues);
+  updateButton.parent("clear&random&updateButtons");
+  updateButton.parent("clear&random&updateButtons");
+
 
   //Create Canvas
   canvas = createCanvas(imageWidth, imageHeight);
@@ -113,7 +113,7 @@ function setup() {
 
   background(0);
 
-  //idk what this does
+  // add zeroes to an attracters array for every pixel in the image.
   for (let i = 0; i < imageWidth; i++) {
     let length = [];
     for (let j = 0; j < imageHeight; j++) {
@@ -124,13 +124,20 @@ function setup() {
 
 }
 
+// The main method basically
 function draw() {
+
+  // Base settings
   background(0);
   stroke(255, 165, 0);
   strokeWeight(5);
   fill(255, 255, 255, 50);
   textAlign(CENTER, CENTER);
-  image(at, 0, 0);
+  image(imageVisualOutput, 0, 0);
+  //
+
+  // Emitters settings
+  // for every x in emitters.
   for (let x of emitters) {
     for (
       let i = 0;
@@ -175,10 +182,10 @@ function randomSpread() {
 }
 function updateValues() {
   clickRadius = parseInt(radiusPrompt.value());
-  decayT = parseFloat(decayPrompt.value());
-  SA = parseFloat((SAprompt.value() / 180) * PI);
-  RA = parseFloat((RAprompt.value() / 180) * PI);
-  SS = parseFloat(SSprompt.value());
+  decayFactor = parseFloat(decayPrompt.value());
+  sensorAngle = parseFloat((SAprompt.value() / 180) * PI);
+  rotateAngle = parseFloat((RAprompt.value() / 180) * PI);
+  stepSize = parseFloat(SSprompt.value());
 }
 /////////////////////////////////////////////
 
@@ -207,27 +214,29 @@ function modifiedRound(i, axis) {
 
 function sense() {
   for (let i = 0; i < particles.length; i++) {
+
     // setting the sensors
     let options = [0, 0, 0];
     options[1] = // middle sensor
-      attracters[modifiedRound(particles[i][0] + SO * cos(particles[i][2]), "x")][modifiedRound(particles[i][1] + SO * sin(particles[i][2]), "y")];
+      attracters[modifiedRound(particles[i][0] + sensorOffsetDistance * cos(particles[i][2]), "x")][modifiedRound(particles[i][1] + sensorOffsetDistance * sin(particles[i][2]), "y")];
     options[0] = // left sensor
-      attracters[modifiedRound(particles[i][0] + SO * cos(particles[i][2] + SA), "x")][modifiedRound(particles[i][1] + SO * sin(particles[i][2] + SA), "y")];
+      attracters[modifiedRound(particles[i][0] + sensorOffsetDistance * cos(particles[i][2] + sensorAngle), "x")][modifiedRound(particles[i][1] + sensorOffsetDistance * sin(particles[i][2] + sensorAngle), "y")];
     options[2] = // right sensor
-      attracters[modifiedRound(particles[i][0] + SO * cos(particles[i][2] - SA), "x")][modifiedRound(particles[i][1] + SO * sin(particles[i][2] - SA), "y")];
+      attracters[modifiedRound(particles[i][0] + sensorOffsetDistance * cos(particles[i][2] - sensorAngle), "x")][modifiedRound(particles[i][1] + sensorOffsetDistance * sin(particles[i][2] - sensorAngle), "y")];
+
     ///Programming the sensors conditions
     if (options[1] >= options[2] && options[1] >= options[0]) { //if middle sensor is bigger than the other two sensors, no change in direction.
       continue;
     } else if (options[0] > options[2]) {                       //if left sensor is bigger than the right sensor, turn left.
-      particles[i][2] = (particles[i][2] + RA) % TWO_PI;
+      particles[i][2] = (particles[i][2] + rotateAngle) % TWO_PI;
     } else if (options[0] < options[2]) {                       //if right sensor is bigger than the left sensor, turn right.
-      particles[i][2] = (particles[i][2] - RA) % TWO_PI;
+      particles[i][2] = (particles[i][2] - rotateAngle) % TWO_PI;
     } else {                                                    //if left sensor is as big as the right sensor, and bigger than the middle sensor,                  
       let rand = Math.random();                                 //turn randomly.
       if (rand < 0.5) {
-        particles[i][2] = (particles[i][2] + RA) % TWO_PI;
+        particles[i][2] = (particles[i][2] + rotateAngle) % TWO_PI;
       } else {
-        particles[i][2] = (particles[i][2] - RA) % TWO_PI;
+        particles[i][2] = (particles[i][2] - rotateAngle) % TWO_PI;
       }
     }
   }
@@ -235,8 +244,8 @@ function sense() {
 
 function updateParticles() {
   for (let i = 0; i < particles.length; i++) {
-    let x = (particles[i][0] + SS * cos(particles[i][2])) % imageWidth;
-    let y = (particles[i][1] + SS * sin(particles[i][2])) % imageHeight;
+    let x = (particles[i][0] + stepSize * cos(particles[i][2])) % imageWidth;
+    let y = (particles[i][1] + stepSize * sin(particles[i][2])) % imageHeight;
     if (x < 0) {
       x += imageWidth;
     }
@@ -248,23 +257,23 @@ function updateParticles() {
     particles[i][1] = y;
     let p1 = modifiedRound(particles[i][0], "x");
     let p2 = modifiedRound(particles[i][1], "y");
-    attracters[p1][p2] += depT;
+    attracters[p1][p2] += attractionFactor;
   }
 }
 
 function decay() {
   for (let i = 0; i < imageWidth; i++) {
     for (let j = 0; j < imageHeight; j++) {
-      writePixel(at, i, j, attracters[i][j]);
+      writePixel(imageVisualOutput, i, j, attracters[i][j]);
     }
   }
-  at.filter(BLUR, diffK);
+  imageVisualOutput.filter(BLUR, diffusionSize);
   for (let i = 0; i < imageWidth; i++) {
     for (let j = 0; j < imageHeight; j++) {
-      attracters[i][j] = at.pixels[(i + j * imageWidth) * 4] * decayT;
+      attracters[i][j] = imageVisualOutput.pixels[(i + j * imageWidth) * 4] * decayFactor;
     }
   }
-  at.updatePixels();
+  imageVisualOutput.updatePixels();
 }
 
 

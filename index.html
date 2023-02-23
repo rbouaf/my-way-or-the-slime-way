@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <! -- For p5js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.js"></script>
 
-    <link href="//db.onlinewebfonts.com/c/4b57277e89dfdd30c9a6b69acaf78d3a?family=SF+Pro" rel="stylesheet" type="text/css"/>
-    <link href="//db.onlinewebfonts.com/c/2fed949d780f40eb2e2f4374e4de8df5?family=SF+Pro+Display" rel="stylesheet" type="text/css"/>
-
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
+
+    <! -- For Tabs -->
     <title>My Way or the Slime Way</title>
     <link rel="icon" href="https://cdn.pixabay.com/photo/2014/04/02/14/03/neuron-306034__340.png">
+
+    <! -- For embeds -->
     <meta content="My Way or the Slime Way" property="og:title" />
     <meta content="Simulating the spread of slime mold using cellular automata. Entry for the McGill Physics Hackathon 2022. 🥈2nd place Overall Winner 🥇1st place Biophysics Winner" property="og:description" />
     <meta content="https://rayane-b.github.io/my-way-or-the-slime-way/" property="og:url" />
@@ -18,68 +20,81 @@
     <meta content="##fff891" data-react-helmet="true" name="theme-color" />
     <meta name="twitter:card" content="summary_large_image">
 
+    <! -- For fonts -->
+    <link href="//db.onlinewebfonts.com/c/4b57277e89dfdd30c9a6b69acaf78d3a?family=SF+Pro" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/2fed949d780f40eb2e2f4374e4de8df5?family=SF+Pro+Display" rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
 
   <h1>My Way or the Slime Way</h1>
+  <h2>Simulating the spread of the Physarum polycephalum slime mold using cellular automata.  <br> </h2>
 
-  <div alt="Loading..." id="slimeContainer"></div>   
+  <div id="slimeContainer"></div>
      
   <script src="sketch.js"></script>
   
   <table class="center" id="cssTable">
     <tr>
-      <td>r<br/><div class="sliders" id="sliders1"></div></td>
-      <td>decayT<br/><div class="sliders" id="sliders2"></div></td>
-      <td>SA<br/><div class="sliders" id="sliders3"></div></td>
-      <td>RA<br/><div class="sliders" id="sliders4"></div></td>
-      <td>SS<br/><div class="sliders" id="sliders5"></div></td>
+      <td>r<br/><div class="sliders" id="radiusSlider"></div></td>
+      <td>decayT<br/><div class="sliders" id="decaySlider"></div></td>
+      <td>SA<br/><div class="sliders" id="sensorAngleSlider"></div></td>
+      <td>RA<br/><div class="sliders" id="rotateAngleSlider"></div></td>
+      <td>SS<br/><div class="sliders" id="stepSizeSlider"></div></td>
     </tr>
   </table>
   
   <div class="sliders" id="sliders"></div>
-  
-  <div class= "clearNrand button" id="clearNrand"></div>
-
-
-  <h3>Simulating the spread of the Physarum polycephalum slime mold using cellular automata.  </h3>
+  <div class= "clear&random&updateButtons button" id="clear&random&updateButtons"></div>
 
   <div id="description" class="sized content">
     <p>
-      <span class="emphasis"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We wanted to work on cellular automata, so, inspired by research on pattern formation observed in the true slime mold <i>Physarum polycephalum</i> (<a href="https://uwe-repository.worktribe.com/output/980579" style="text-decoration: none;">Jones 2010</a>), we decided to create an interactive simulation of this organism's fascinating behavior!<br><br>
+      <span class="emphasis"></span> We wanted to work on cellular automata, so, inspired by research on pattern formation observed
+      in the true slime mold <i>Physarum polycephalum</i> (<a href="https://uwe-repository.worktribe.com/output/980579" style="text-decoration: none;">
+      Jones 2010</a>), we decided to create an interactive simulation of this organism's fascinating behavior!<br><br>
     </p>
-    <p> <span class="emphasis">Instructions</span>
+    <p> <div class="emphasis">Instructions</div>
     <ul>
       <li> Click anywhere on the canvas to grow a slime root cluster from that point.</li>
       <li> Hold <code class="keys">shift</code> and click anywhere on the canvas to kill off the slime mold in that particular area.</li>
       <li> Hold <code class="keys">alt</code> and click anywhere on the canvas to create an emitter that continuously releases slime mold particles.</li>
-      <li> Use the provided buttons to <code class="clearText">CLEAR</code> (remove all slime from the scene) and <code class="clearText">RANDOM</code>ize (generate a new scene with random slime mold positioning) the scene.</li>
-      <li> Tinker around with the model's parameters by entering new values for: <code>r</code> (the radius of the slime mold cluster created by clicking), <code>decayT</code> (the rate at which the attracters that direct the slime mold's growth decay), <code>SA</code> (the sensor angle in radians), <code>RA</code> (the rotation angle in radians), and <code>SS</code> (the 'step size' of the slime mold). Then to update the scene and reflect changes made to these variables, press the <code class="clearText">UPDATE</code> button. Watch as the system exhibits new and complex emergent properties!</li><br>
+      <li> Use the provided buttons to <code class="clearText">CLEAR</code> (remove all slime from the scene) and
+        <code class="clearText">RANDOM</code>ize (generate a new scene with random slime mold positioning) the scene.</li>
+      <li> Tinker around with the model's parameters by entering new values for: <code>r</code>
+        (the radius of the slime mold cluster created by clicking), <code>decayT</code>
+        (the rate at which the attracters that direct the slime mold's growth decay), <code>SA</code> (the sensor angle in radians),
+        <code>RA</code> (the rotation angle in radians), and <code>SS</code> (the 'step size' of the slime mold).
+        Then to update the scene and reflect changes made to these variables, press the <code class="clearText">UPDATE</code> button.
+        Watch as the system exhibits new and complex emergent properties!<br></li>
     </ul>
-    </p>
 
-    <p> <span class="emphasis">How it works</span><br>
+    <p> <code class="emphasis">How it works</code><br>
 
-      <br>&nbsp;&nbsp;&nbsp;&nbsp;Despite demonstrating a high capacity for cellular intelligence, the rules driving the slime mold (and their representations in our model) are actually quite simple! Following Jones' research, we modelled the behavior of <i>Physarum polycephalum</i> as follows:
-        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Every slime mold particle has three sensors, pointing straight ahead, skewed to the left, and skewed to the right. A sensor detects the amount of chemoattractant in its target area.
+      <br>Despite demonstrating a high capacity for cellular intelligence, the rules driving the slime mold (and their representations in our model) are actually quite simple! Following Jones' research, we modelled the behavior of <i>Physarum polycephalum</i> as follows:
+        <br><br>Every slime mold particle has three sensors, pointing straight ahead, skewed to the left, and skewed to the right.
+      A sensor detects the amount of chemoattractant in its target area.
       <div>
-      <center>
-          <img src="diagram_670.png" style="width:80%">
-        </center>
+          <img alt="A diagram." src="diagram_670.png" style="width:80%">
       </div>
-      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Each slime mold particle begins by "sensing" for chemoattractants (evaluating the values of its different sensors). If the middle sensor detects the most chemoattractant among the three, the slime mold particle stays oriented in the same direction. If both the left and right sensors detect more chemoattractant than the middle sensor and both detect the same amount, the slime mold particle turns randomly. If the right sensor detects more chemoattractant than the middle sensor, the slime mold particle turns right. If the left sensor detects more chemoattractant than the middle sensor, the slime mold particle turns left. Then, the slime mold particle simply moves forward according to the direction specified by its sensors, according to some specified step size.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, the slime mold particle deposits chemoattractants in the chemoattractant trail layer of the model, and those chemoattractants diffuse into the surrounding area and slowly decays as time goes on. Believe it or not, that's all you need to know to understand how this model functions!
-      </p><br><br>
+      <br>Each slime mold particle begins by "sensing" for chemoattractants (evaluating the values of its different sensors).
+    If the middle sensor detects the most chemoattractant among the three, the slime mold particle stays oriented in the same direction.
+    If both the left and right sensors detect more chemoattractant than the middle sensor and both detect the same amount,
+    the slime mold particle turns randomly. If the right sensor detects more chemoattractant than the middle sensor,
+    the slime mold particle turns right. If the left sensor detects more chemoattractant than the middle sensor,
+    the slime mold particle turns left. Then, the slime mold particle simply moves forward according to the direction
+    specified by its sensors, according to some specified step size.
+    <br><br>Finally, the slime mold particle deposits chemoattractants in the chemoattractant trail layer of the model,
+    and those chemoattractants diffuse into the surrounding area and slowly decays as time goes on. Believe it or not,
+    that's all you need to know to understand how this model functions!
+      <br><br>
       <p style="text-align: center;">Also feel free to take a look at this pre-rendered simulation that we ran on a larger canvas:</p>
-      <center>
         <iframe class="videoDemo" width="500" height="500" src="https://www.youtube.com/embed/CWU5sh9lTDU"></iframe>
-      </center>
 
       <div id="footer" class="sizedcontent">
         <p> Made with ♥ by <br><a href="https://github.com/mbm64">Mohamed Ben Mekki</a>, 
           <a href="https://github.com/leif-mw">Leif Martens-Wallace</a>, 
            and <a href="https://github.com/rayane-b">Rayane Bouafia</a> <br></p>
       </div>
-
+  </div>
 </body>
 </html>
