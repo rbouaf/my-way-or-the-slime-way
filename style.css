@@ -5,54 +5,21 @@ body {
   padding: 0 !important;
 }
 
-@import url(//db.onlinewebfonts.com/c/4b57277e89dfdd30c9a6b69acaf78d3a?family=SF+Pro);
-@import url(//db.onlinewebfonts.com/c/2fed949d780f40eb2e2f4374e4de8df5?family=SF+Pro+Display);
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot");
-  src: url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/4b57277e89dfdd30c9a6b69acaf78d3a.svg#SF Pro")
-      format("svg");
-}
-@font-face {
-  font-family: "SF Pro Display Thin";
-  src: url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.eot");
-  src: url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/2fed949d780f40eb2e2f4374e4de8df5.svg#SF Pro Display")
-      format("svg");
-}
-
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "SF Pro Display", serif;
   font-feature-settings: "onum" 1;
 }
 
 h1 {
-  font-family: "SF Pro Display";
   padding-left: 0.3em;
   padding-right: 0.3em;
   color: #000000;
 }
 
 h2 {
-  font-family: "SF Pro Display Thin";
+  
   padding-left: 0.3em;
   padding-right: 0.3em;
   letter-spacing: 1px;
@@ -60,7 +27,7 @@ h2 {
 }
 
 emphasis {
-  font-family: "SF Pro Display Bold";
+
   color: #906ce4;
 }
 
@@ -69,7 +36,7 @@ a:hover {
 }
 
 u {
-  font-family: "SF Pro Display";
+
   font-variant: small-caps;
   font-weight: 100;
   text-decoration: none;
@@ -86,7 +53,7 @@ ul {
 
 input {
   text-align: center;
-  font-family: "SF Pro Display";
+
   border-width: 1px;
   border-radius: 0.3rem;
 }
@@ -114,7 +81,7 @@ code {
 }
 
 #footer {
-  font-family: "SF Pro Display";
+
   text-align: center;
   margin-top: 5em;
   margin-bottom: 5em;
@@ -181,7 +148,7 @@ td {
 }
 
 .button button {
-  font-family: "SF Pro Display", serif;
+
   margin: 0;
   background-color: #906ce4;
   border: none;
@@ -205,7 +172,7 @@ button:hover {
 }
 
 .clearText {
-  font-family: "SF Pro Display";
+
   font-size: smaller;
   background-color: #a78fe4;
   color: white;
